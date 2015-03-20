@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D99D9C7E-6FBC-4DD0-AFAB-7A0824D2F77C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Take Care</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>140F02E605CA3F10581F9DC486D857FDC6B66714</key>
+		<string>https://github.com/codeegoh/hack4her.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Take Care/Take Care.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>140F02E605CA3F10581F9DC486D857FDC6B66714</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/codeegoh/hack4her.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>140F02E605CA3F10581F9DC486D857FDC6B66714</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>140F02E605CA3F10581F9DC486D857FDC6B66714</string>
+			<key>IDESourceControlWCCName</key>
+			<string>hack4her</string>
+		</dict>
+	</array>
+</dict>
+</plist>

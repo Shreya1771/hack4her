@@ -362,10 +362,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="kFh-2t-ZB5">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search for danger zones" translatesAutoresizingMaskIntoConstraints="NO" id="FF8-fp-KTW">
-                                <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.60000002384185791" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Search for danger zones" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dRB-Gq-TWa">
+                                <rect key="frame" x="0.0" y="47" width="320" height="37"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </searchBar>
+                                <connections>
+                                    <outlet property="delegate" destination="Tqh-bw-pXD" id="1Z0-l4-WdW"/>
+                                </connections>
+                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QIU-hF-4Bd">
                                 <rect key="frame" x="0.0" y="88" width="320" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -384,8 +389,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="rZb-ci-9le"/>
                     <connections>
-                        <outlet property="searchBar" destination="FF8-fp-KTW" id="G0C-ry-YmK"/>
                         <outlet property="tableView" destination="QIU-hF-4Bd" id="A9S-gj-rNX"/>
+                        <outlet property="txt_search" destination="dRB-Gq-TWa" id="8pp-zY-Xjr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIh-Ge-0Wl" userLabel="First Responder" sceneMemberID="firstResponder"/>

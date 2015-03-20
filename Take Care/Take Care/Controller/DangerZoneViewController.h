@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
-@interface DangerZoneViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface DangerZoneViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MBProgressHUDDelegate, UITextFieldDelegate> {
+    MBProgressHUD *HUD;
+}
 
 @end
