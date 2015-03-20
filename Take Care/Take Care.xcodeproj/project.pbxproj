@@ -69,6 +69,10 @@
 		EC91DE001ABCAF9300FC7A49 /* emergencycontacts.png in Resources */ = {isa = PBXBuildFile; fileRef = EC91DDFF1ABCAF9300FC7A49 /* emergencycontacts.png */; };
 		EC91DE021ABCAF9F00FC7A49 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = EC91DE011ABCAF9F00FC7A49 /* home.png */; };
 		EC91DE041ABCAFDB00FC7A49 /* drawerbarbg.png in Resources */ = {isa = PBXBuildFile; fileRef = EC91DE031ABCAFDB00FC7A49 /* drawerbarbg.png */; };
+		EC91DE061ABCDC2800FC7A49 /* user notactive btn.png in Resources */ = {isa = PBXBuildFile; fileRef = EC91DE051ABCDC2800FC7A49 /* user notactive btn.png */; };
+		EC91DE091ABCDCC600FC7A49 /* RAContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC91DE081ABCDCC600FC7A49 /* RAContactsViewController.m */; };
+		EC91DE0D1ABCDD1400FC7A49 /* RAContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC91DE0B1ABCDD1400FC7A49 /* RAContactCell.m */; };
+		EC91DE0F1ABCE55700FC7A49 /* drawerburger.png in Resources */ = {isa = PBXBuildFile; fileRef = EC91DE0E1ABCE55700FC7A49 /* drawerburger.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +166,12 @@
 		EC91DDFF1ABCAF9300FC7A49 /* emergencycontacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emergencycontacts.png; sourceTree = "<group>"; };
 		EC91DE011ABCAF9F00FC7A49 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		EC91DE031ABCAFDB00FC7A49 /* drawerbarbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drawerbarbg.png; sourceTree = "<group>"; };
+		EC91DE051ABCDC2800FC7A49 /* user notactive btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user notactive btn.png"; sourceTree = "<group>"; };
+		EC91DE071ABCDCC600FC7A49 /* RAContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAContactsViewController.h; sourceTree = "<group>"; };
+		EC91DE081ABCDCC600FC7A49 /* RAContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAContactsViewController.m; sourceTree = "<group>"; };
+		EC91DE0B1ABCDD1400FC7A49 /* RAContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAContactCell.m; sourceTree = "<group>"; };
+		EC91DE0C1ABCDD1400FC7A49 /* RAContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAContactCell.h; sourceTree = "<group>"; };
+		EC91DE0E1ABCE55700FC7A49 /* drawerburger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drawerburger.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +226,7 @@
 		7ECD60981ABD00A000F0637D /* Take Care */ = {
 			isa = PBXGroup;
 			children = (
+				EC91DE0A1ABCDCF500FC7A49 /* Cells */,
 				EC91DDA61ABCABF500FC7A49 /* Commons */,
 				EC91DDA31ABCABB500FC7A49 /* Sounds */,
 				7ECD60CD1ABD031000F0637D /* Assets */,
@@ -284,6 +295,7 @@
 		7ECD60CD1ABD031000F0637D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				EC91DE051ABCDC2800FC7A49 /* user notactive btn.png */,
 				EC91DE031ABCAFDB00FC7A49 /* drawerbarbg.png */,
 				EC91DE011ABCAF9F00FC7A49 /* home.png */,
 				EC91DDFF1ABCAF9300FC7A49 /* emergencycontacts.png */,
@@ -297,6 +309,7 @@
 				EC91DDB61ABCAF3700FC7A49 /* dangerzonenotpressed.png */,
 				EC91DDB71ABCAF3700FC7A49 /* dangerzonepressed.png */,
 				EC91DDB81ABCAF3700FC7A49 /* drawer.png */,
+				EC91DE0E1ABCE55700FC7A49 /* drawerburger.png */,
 				EC91DDB91ABCAF3700FC7A49 /* drawerbar.png */,
 				EC91DDBA1ABCAF3700FC7A49 /* drawerrr.png */,
 				EC91DDBB1ABCAF3800FC7A49 /* emergencyicon.png */,
@@ -333,6 +346,8 @@
 		7ECD60CE1ABD031700F0637D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EC91DE071ABCDCC600FC7A49 /* RAContactsViewController.h */,
+				EC91DE081ABCDCC600FC7A49 /* RAContactsViewController.m */,
 				EC91DDAE1ABCADF300FC7A49 /* UnsafeViewController.h */,
 				EC91DDAF1ABCADF300FC7A49 /* UnsafeViewController.m */,
 				7ECD60C51ABD026200F0637D /* LeftPanelViewController.h */,
@@ -388,6 +403,15 @@
 				EC91DDAA1ABCAC5800FC7A49 /* AnimationUtils.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		EC91DE0A1ABCDCF500FC7A49 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EC91DE0B1ABCDD1400FC7A49 /* RAContactCell.m */,
+				EC91DE0C1ABCDD1400FC7A49 /* RAContactCell.h */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,6 +527,7 @@
 				EC91DDD81ABCAF3800FC7A49 /* cancelbutton.png in Resources */,
 				EC91DDF41ABCAF3800FC7A49 /* reportincidentnotpressed.png in Resources */,
 				EC91DDEF1ABCAF3800FC7A49 /* menu-icon.png in Resources */,
+				EC91DE0F1ABCE55700FC7A49 /* drawerburger.png in Resources */,
 				EC91DDE11ABCAF3800FC7A49 /* enterpintextbox.png in Resources */,
 				EC91DDF21ABCAF3800FC7A49 /* profileicon.png in Resources */,
 				EC91DDE01ABCAF3800FC7A49 /* emergencyicon.png in Resources */,
@@ -513,6 +538,7 @@
 				EC91DDF71ABCAF3800FC7A49 /* settingsicon.png in Resources */,
 				EC91DE041ABCAFDB00FC7A49 /* drawerbarbg.png in Resources */,
 				EC91DDFE1ABCAF8000FC7A49 /* settings.png in Resources */,
+				EC91DE061ABCDC2800FC7A49 /* user notactive btn.png in Resources */,
 				EC91DDF91ABCAF3800FC7A49 /* submitbutton.png in Resources */,
 				EC91DDA51ABCABE700FC7A49 /* siren.mp3 in Resources */,
 				EC91DDE21ABCAF3800FC7A49 /* feelunsafebutton.png in Resources */,
@@ -569,6 +595,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ECD60A21ABD00A000F0637D /* Take_Care.xcdatamodeld in Sources */,
+				EC91DE0D1ABCDD1400FC7A49 /* RAContactCell.m in Sources */,
 				7ECD609F1ABD00A000F0637D /* AppDelegate.m in Sources */,
 				7EB7C8AD1ABBCAD400E9BC48 /* SafeSpaceViewController.m in Sources */,
 				7EB7C8B01ABBFF2C00E9BC48 /* DangerZoneViewController.m in Sources */,
@@ -580,6 +607,7 @@
 				7ECD60F21ABD031700F0637D /* SpaceViewController.m in Sources */,
 				7E1C1E431ABC3FF0007800D5 /* StoryDetailViewController.m in Sources */,
 				7ECD60CA1ABD026200F0637D /* SidePanelViewController.m in Sources */,
+				EC91DE091ABCDCC600FC7A49 /* RAContactsViewController.m in Sources */,
 				7ECD60DF1ABD031700F0637D /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

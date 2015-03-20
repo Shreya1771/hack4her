@@ -7,6 +7,8 @@
 //
 
 #import "LeftPanelViewController.h"
+#import <JASidePanelController.h>
+#import <JASidePanels/UIViewController+JASidePanel.h>
 
 @interface LeftPanelViewController ()
 
@@ -25,10 +27,24 @@
     
 }
 
+#pragma mark - Action Methods
+- (IBAction)contactsClicked:(UIButton *)sender
+{
+    [self setCenterVC:[self.storyboard instantiateViewControllerWithIdentifier:@"S_CONTACTS_VC"]];
+}
+
 - (IBAction)btn_home_clicked:(id)sender
 {
-     UINavigationController *navController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainSidePanel"];
-     [self presentViewController:navController animated:NO completion:nil];
+//     UINavigationController *navController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainSidePanel"];
+//     [self presentViewController:navController animated:NO completion:nil];
+    
+    [self setCenterVC:[self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"]];
+}
+
+- (void)setCenterVC:(UIViewController *)vc
+{
+    [self.sidePanelController setCenterPanel:vc];
+    [self.sidePanelController showCenterPanelAnimated:YES];
 }
 
 @end

@@ -27,6 +27,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    self.allowLeftSwipe = YES;
     [self setLeftPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"leftViewController"]];
     [self setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"]];
 }
