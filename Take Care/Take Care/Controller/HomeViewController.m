@@ -42,23 +42,28 @@
     [self.sidePanelController showLeftPanelAnimated:YES];
 }
 
+#pragma mark - Action Methods
+- (IBAction)btn_feel_unsafe_clicked:(id)sender
+{
+    [self performSegueWithIdentifier:@"segueToReporting" sender:self];
+}
+
 - (IBAction)btn_enter_space_clicked:(id)sender
 {
     [self getStories];
 }
 
 #pragma mark - Navigation
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"segueToSpace"]) {
+    if ([segue.identifier isEqualToString:@"segueToSpace"])
+    {
         SpaceViewController *spaceVC = [segue destinationViewController];
         spaceVC.array_stories = self.array_stories;
     }
 }
 
 #pragma mark - AFNetworking (API Calls)
-
 - (void)getStories
 {
     [self.array_stories removeAllObjects];
@@ -80,14 +85,13 @@
 }
 
 #pragma mark - MBProgressHUDDelegate methods
-
-- (void)hudWasHidden:(MBProgressHUD *)hud {
+- (void)hudWasHidden:(MBProgressHUD *)hud
+{
     [HUD removeFromSuperview];
     HUD = nil;
 }
 
 #pragma mark - HUD methods
-
 - (void)hideHUD
 {
     [HUD hide:YES];
