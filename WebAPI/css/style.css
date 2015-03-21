@@ -1,0 +1,255 @@
+body {
+    font-family: 'Arial';
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#container {
+    width: 999px;
+    height: 100%;
+    position: relative;
+    margin: 0px auto;
+    background-color: lightpink;    
+    background-repeat: repeat-y;
+}
+#welcomediv{
+    position: relative;
+    top: 40px;
+    left: 50px;
+    height: 100px;
+    width: 300px;
+    text-decoration: none;
+    font-family: arial black, arial;
+    color: gray
+}
+#headerblue{
+    height: 25px;
+    background:#0c2b6e;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+}
+#editcontents{
+    height: 1700px;
+}
+
+#formdiv{
+    width: 200px;
+    margin: 0px;
+}
+/*PANEL*/
+#panel_contents{
+    width: 440px;
+}
+select {
+    width: 200px;
+    float: left;
+}
+.controls {
+    width: 40px;
+    float: left;
+    margin: 10px;
+}
+#btnimg{
+    position: absolute;
+    right: 15px;
+    top: 180px;
+}
+.controls a {
+    background-color: #0a1e43;
+    border-radius: 4px;
+    border: 2px solid #0c2b6e;
+    color: #ffffff;
+    padding: 2px;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    margin: 5px;
+    width: 20px;
+}
+#form_error_copy{
+    color: red;
+    position: absolute;
+    left: 250px;
+    top: 190px;
+}
+#form_error_poster{
+    color: red;
+    position: absolute;
+    left: 250px;
+    top: 360px;
+}
+#form_error_miniposter{
+    color: red;
+    position: absolute;
+    left: 250px;
+    top: 530px;
+}
+/*LOGIN FORM*/
+#centerlogin{
+    position: absolute;
+    left: 360px;
+    top: 200px;
+    font-family: Arial;
+}
+#textbox{
+    height: 30px;
+    width: 380px;
+    border: 0px solid;
+}
+#textbox2{
+    position: absolute;
+    left: 0px;
+    height: 30px;
+    width: 280px;
+    padding: 5px;
+    border: 1px solid;
+    border-color: #acacac;
+    align-content: center;
+}
+#title{
+    width: 280px;
+    padding: 2px;
+    border: 1px solid;
+    border-color: #acacac;
+}
+#url{
+    width: 280px;
+    padding: 2px;
+    border: 1px solid;
+    border-color: #acacac;
+}
+#content_type{
+    border: 0px solid;
+}
+#creation_date{
+    border: 0px solid;
+}
+#label{
+    position: relative;
+    /*//left: 20px;*/
+    color: #042547;
+    top: 15px;
+    left: -5px;
+    font-size: 12px;
+}
+#error_msg{
+    position: relative;
+    /*//left: 20px;*/
+    color: #cc000b;
+    top: 15px;
+    left: -5px;
+    font-size: 12px;
+}
+#btn{
+    position: relative;
+    top: 20px;
+    left: 175px;
+    width: 90px;
+}
+/*----- Tabs -----*/
+.tabs {
+    width:990px;
+    display:inline-block;
+    border: 1px solid #acacac;
+}
+
+/*----- Tab Links -----*/
+/* Clearfix */
+.tab-links:after {
+    display:block;
+    clear:both;
+    content:'';
+}
+
+.tab-links li {
+    margin:6px 0px;
+    float:left;
+    list-style:none;
+}
+
+.tab-links a {
+    padding:9px 15px;
+    display:inline-block;
+    /*border-radius:3px 3px 0px 0px;*/
+    background:#0c2b6e;
+    font-size:16px;
+    font-weight:600;
+    color: #ffffff;
+    transition:all linear 0.15s;
+    text-decoration:none
+}
+
+.tab-links a:hover {
+    background: rgb(16, 64, 156);
+    text-decoration:none;
+}
+
+li.active a, li.active a:hover {
+    background:#fff;
+    color:#4c4c4c;
+}
+/*----- Content of Tabs -----*/
+
+.tab {
+    display:none;
+}
+
+.tab.active {
+    display:block;
+}
+
+
+
+/*PAGINATION AND TABLE*/
+#tabcontainer {
+    width: 900px;
+    margin: auto;
+    font-family: helvetica, arial;
+}
+#tabcontainer_panel {
+    position: relative;
+    width: 650px;
+    margin-left: 100px;
+    font-family: helvetica, arial;
+}
+
+table {
+    width: 800px;
+    margin-bottom: 10px;
+}
+
+td {
+    border-right: 2px solid #111111;
+    padding: 1em;
+}
+
+td:last-child {
+    border-right: none;
+}
+
+th {
+    text-align: left;
+    padding-left: 1em;
+    background: #cac9c9;
+    border-bottom: 1px solid white;
+    border-right: 1px solid #aaaaaa;
+}
+
+
+/*EDIT FORM*/
+#editcontents{
+    position: relative;
+    left: 200px;
+    width: 500px;
+    margin: 0px;
+    font-family: Arial;
+    font-size: 12px;
+    color: #2e7cab;
+}
+#pagination_number{
+    position: relative;
+    text-align: center;
+    left: 35%;
+    width: 200px;
+}

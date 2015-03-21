@@ -46,10 +46,19 @@ class Tc_model extends CI_Model{
             return false;
         }
     }
+    function get_message($id){
+		$get = $this->db->query("SELECT * FROM tc_stories where story_id = '".$id."'");
+		if($get->num_rows() > 0 ){
+			return $get->result_array();
+		}
+		else{
+			return false;
+		}
+    }
 
     function filter_locations($post){
 		$location =  (array_key_exists('location', $post))? '%'.urldecode($post['location']).'%': null;
-		$get = $this->db->query("SELECT * FROM tc_stories where story_location LIKE '".$location."'");//get_where('tc_stories', array('story_timestamp' => $date_today));
+		$get = $this->db->query("SELECT * FROM tc_stories where story_location LIKE '".$location."' and story_zone='danger'");//get_where('tc_stories', array('story_timestamp' => $date_today));
 		//var_dump($get->result_array());
 		if($get->num_rows() > 0 ){
 			return $get->result_array();
@@ -59,10 +68,18 @@ class Tc_model extends CI_Model{
 		}
 	}
 
+	function get_contacts($post){
+		$user =  (array_key_exists('user', $post))? ''.urldecode($post['user']).'': null;
+		$get = $this->db->query("SELECT id FROM tc_accounts where username='".$user."'");
+        foreach($get->result_array() as $row){
+			$get_qry = $this->db->query("SELECT * FROM tc_contact where account_id = '".$row['id']."'");
+			if($get_qry->num_rows() > 0 ){
+				return $get_qry->result_array();
+			}
+			else{
+				return false;
+			}
+        }
+	}
+
 }
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 3/17/15
- * Time: 5:07 PM
- */

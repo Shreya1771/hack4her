@@ -8,7 +8,28 @@ class Api extends CI_Controller{
 		date_default_timezone_set('Asia/Manila');//setting the timezone
     }
     function index(){
-        echo base_url();
+        //echo base_url();
+        $this->load->view('cms_view');
+    }
+
+	function fb_share($id){
+	        //echo base_url();
+		$result = $this->tc_model->get_message($id);
+		foreach($result as $row){
+			$data['table_view'] = $row['story_msg'].'<br>Where: '.$row['story_location'];
+
+        }
+		$this->load->view('cms_view', $data);
+    }
+
+    function report_incident(){
+        $data['table_view'] = 'report_view';
+        $this->load->view('cms_view', $data);
+    }
+
+    function identify_safe_space(){
+        $data['table_view'] = 'safe_view';
+        $this->load->view('cms_view', $data);
     }
 
     function add_account(){
@@ -22,6 +43,14 @@ class Api extends CI_Controller{
         $post = $this->input->post(NULL,TRUE);
         $result = $this->tc_model->add_story($post);
         $this->display_output($result);
+    }
+
+    function add_story_2(){
+        $post = $this->input->post(NULL,TRUE);
+        $result = $this->tc_model->add_story($post);
+        if($result){
+        	redirect('api');
+        }
     }
 
     function get_story(){
