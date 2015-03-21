@@ -34,9 +34,9 @@
 
 /* CHIKKA API SETTINGS */
 #define K_MESSAGE_TYPE @"SEND"
-#define K_SHORTCODE @"29290948061"
-#define K_MESSAGE_ID @"ccc81279fcc048d1a6fcc52ed4c13255"
-#define K_CLIENT_ID @"5303349d13c2e0d15f40f1c65b900fa39ea3203d47501ec60e119a1b13b48ad0"
-#define K_SECRET_KEY @"8578e3bf970d0197cb961b53b8e3524d7ccfdc6e4e314b3dc855d3973947f465"
-#define K_MESSAGE_NOT_SAFE @"Im %@, I feel unsafe and I'm at %@"
-#define K_MESSAGE_SAFE @"Im %@, I am safe now and I'm at %@. Please disregard my previous SMS."
+#define K_SHORTCODE @"29290437"
+#define K_MESSAGE_ID @"lou81279fcc048d1a6fcc52ed4c13255"
+#define K_CLIENT_ID @"df718530b98cf34f803a339426387a1fe7398050525157494893abde3ab49e9b"
+#define K_SECRET_KEY @"e280f02255a1c3795b64110ddc04d102698a0a9f57c033c7feeb6d52f2c28553"
+#define K_MESSAGE_NOT_SAFE @"I'm %@, I feel unsafe and I'm at %@"
+#define K_MESSAGE_SAFE @"I'm %@, I am safe now and I'm at %@. Please disregard my previous SMS."

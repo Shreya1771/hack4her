@@ -8,10 +8,12 @@
 
 #import "RAContactsViewController.h"
 #import "RAContactCell.h"
+#import "JASidePanelController.h"
+#import <UIViewController+JASidePanel.h>
 
 @interface RAContactsViewController () <UITableViewDelegate, UITableViewDataSource>
-
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property (strong, nonatomic) NSMutableArray *array_contacts;
 @end
 
 @implementation RAContactsViewController
@@ -20,12 +22,29 @@
 {
     [super viewDidLoad];
 	
-	// Do any additional setup after loading the view.
-
-	// TableView Delegates
 	self.tblView.delegate = self;
 	self.tblView.dataSource = self;
-	//self.tblView.backgroundColor =  [UIColor colorWithRed:(95/255.0) green:(100/255.0) blue:(115/255.0) alpha:1];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"header.png"] forBarMetrics:UIBarMetricsDefault];
+    
+    UIBarButtonItem *menu = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"drawerburger.png"] style:UIBarButtonItemStylePlain target:self action:@selector(toggleLeftPanel)];
+    self.navigationItem.leftBarButtonItem = menu;
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+    self.tblView.backgroundColor = [UIColor clearColor];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    self.array_contacts = [NSMutableArray array];
+    self.array_contacts = [[userDefaults objectForKey:@"array_contacts"] mutableCopy];
+    [self.tblView reloadData];
+}
+
+- (void)toggleLeftPanel
+{
+    [self.sidePanelController showLeftPanelAnimated:YES];
 }
 
 #pragma mark - Table view delegate
@@ -37,20 +56,23 @@
 #pragma mark - Table view datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return 100;
+	return self.array_contacts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	RAContactCell *cell = (RAContactCell *)[self.tblView dequeueReusableCellWithIdentifier:@"CELL_CONTACT"];
-	
-	cell.lblFullname.text = [NSString stringWithFormat:@"Ma. Gaile Danica Leonidas #%d", indexPath.row];
-	
-	cell.imgContact.image = [UIImage imageNamed:@"user notactive btn.png"];
+    static NSString *CellIdentifier = @"CELL_CONTACT";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    NSArray *array_contact_detail = [self.array_contacts[indexPath.row] componentsSeparatedByString:@"|"];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@\n%@", array_contact_detail[0], array_contact_detail[1]];
+    cell.textLabel.numberOfLines = 2;
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor clearColor];
 	
 	return cell;
 }
-
-
 
 @end

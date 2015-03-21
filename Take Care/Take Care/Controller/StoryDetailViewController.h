@@ -12,4 +12,5 @@
 @property (strong, nonatomic) NSString *reporter;
 @property (strong, nonatomic) NSString *story;
 @property (strong, nonatomic) NSString *location;
+@property (strong, nonatomic) NSNumber *story_id;
 @end

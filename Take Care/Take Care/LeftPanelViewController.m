@@ -47,4 +47,9 @@
     [self.sidePanelController showCenterPanelAnimated:YES];
 }
 
+- (IBAction)change_pin_clicked:(id)sender {
+    //S_PIN_VC
+    [self setCenterVC:[self.storyboard instantiateViewControllerWithIdentifier:@"S_PIN_VC"]];
+}
+
 @end

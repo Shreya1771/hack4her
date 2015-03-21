@@ -37,6 +37,11 @@
     refreshControl.tintColor = [UIColor whiteColor];
     self.refresh = refreshControl;
     [self.tableView addSubview:self.refresh];
+    
+    if (self.array_stories.count <= 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"No stories to show for this day." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Okay", nil];
+        [alert show];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -68,6 +73,7 @@
         storyDetailVC.reporter = [self.array_stories[self.tableView.indexPathForSelectedRow.row] objectForKey:@"story_sender"];
         storyDetailVC.story = [self.array_stories[self.tableView.indexPathForSelectedRow.row] objectForKey:@"story_msg"];
         storyDetailVC.location = [self.array_stories[self.tableView.indexPathForSelectedRow.row] objectForKey:@"story_location"];
+        storyDetailVC.story_id = [self.array_stories[self.tableView.indexPathForSelectedRow.row] objectForKey:@"story_id"];
     }
 }
 
@@ -133,6 +139,8 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error.localizedDescription);
         [self hideHUD];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Okay", nil];
+        [alert show];
     }];
 }
 

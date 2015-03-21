@@ -68,6 +68,7 @@
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
     textView.text = @"";
+    textView.textColor = [UIColor blackColor];
     [self animateTextView:textView up:YES];
 }
 
@@ -124,6 +125,8 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error.localizedDescription);
         [self hideHUD];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Okay", nil];
+        [alert show];
     }];
 }
 

@@ -35,8 +35,8 @@ AVAudioPlayer *newPlayer;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-   
-
+    
+    
     /* Region latitude and logitude */
     // GMA NETWORK CENTRE
     self.center = CLLocationCoordinate2DMake(14.6337, 121.0435);
@@ -45,7 +45,7 @@ AVAudioPlayer *newPlayer;
     // initialized AVAudio Player
     NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: @"siren" ofType: @"mp3"];
     NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
-
+    
     newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL error: nil];
     newPlayer.numberOfLoops = -1; // Loop indefinately
 }
@@ -112,7 +112,7 @@ AVAudioPlayer *newPlayer;
 - (void)holdRelease
 {
     [AnimationUtils animateShow:self.imgPressHandler];
-     self.imgPressHandler.image = [UIImage imageNamed:@"tapimage.png"];
+    self.imgPressHandler.image = [UIImage imageNamed:@"tapimage.png"];
     
     
     [newPlayer play];
@@ -134,7 +134,7 @@ AVAudioPlayer *newPlayer;
         {
             [self sendSMSTo:contact withMessage:msg];
         }
-
+        
         
     });
 }
@@ -146,14 +146,15 @@ AVAudioPlayer *newPlayer;
 
 - (void)sendSMSTo:(NSString *)mobileNumber withMessage:(NSString *)msg
 {
-//    [self.array_stories removeAllObjects];
-//    [self displayHUD];
+    //    [self.array_stories removeAllObjects];
+    //    [self displayHUD];
+    NSString *msgID = [self randomStringWithLength:32];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *params = @{
                              @"message_type" : K_MESSAGE_TYPE,
                              @"mobile_number" : mobileNumber,
                              @"shortcode" : K_SHORTCODE,
-                             @"message_id" : K_MESSAGE_ID,
+                             @"message_id" : msgID,//K_MESSAGE_ID,
                              @"message" : msg,
                              @"client_id" : K_CLIENT_ID,
                              @"secret_key" : K_SECRET_KEY
@@ -163,7 +164,7 @@ AVAudioPlayer *newPlayer;
     [manager POST:@"https://post.chikka.com/smsapi/request" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"CHIKKA RESPONSE: %@", [responseObject description]);
         
- 
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error.localizedDescription);
         //[self hideHUD];
@@ -287,20 +288,22 @@ AVAudioPlayer *newPlayer;
             placemark = [placemarks lastObject];
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.lblAddress.text = [NSString stringWithFormat:@" %@\n%@ %@\n%@\n%@",placemark.thoroughfare,
+                self.lblAddress.text = [NSString stringWithFormat:@" %@ %@\n%@ %@\n%@\n%@",
+                                        placemark.subThoroughfare,
+                                        placemark.thoroughfare,
                                         placemark.postalCode,
                                         placemark.locality,
                                         placemark.administrativeArea,
                                         placemark.country];
             });
-                
+            
         }
         else
         {
             if (K_DEBUG) NSLog(@"%@", error.debugDescription);
         }
     } ];
-
+    
     
 }
 
@@ -378,7 +381,7 @@ AVAudioPlayer *newPlayer;
 #pragma mark - TextField Delegate Methods
 - (IBAction)textEditingChanged:(UITextField *)sender
 {
-    if ([sender.text isEqualToString:@"12345"])
+    if ([sender.text isEqualToString:@"1234"])
     {
         dispatch_async(dispatch_get_main_queue(), ^{
             [AnimationUtils animateHide:self.PINView withCallback:^{
@@ -386,23 +389,43 @@ AVAudioPlayer *newPlayer;
                 [self.txtPIN resignFirstResponder];
             }];
         });
-
+        
         
         /* SEND SMS TO INFORM YOUR FRIENDS THAT YOU NOW FEEL SAFE AT YOUR CURRENT LOCATION */
         dispatch_queue_t q = dispatch_queue_create("ph.com.goleng", NULL);
         dispatch_async(q, ^{
             
             NSString *msg = [NSString stringWithFormat:K_MESSAGE_SAFE, @"Gaile Sarmiento", self.lblAddress.text];
-
+            
             NSArray *friendsContact = @[@"639997090756", @"639997090756"];
-
+            
             for (NSString *contact in friendsContact)
             {
                 [self sendSMSTo:contact withMessage:msg];
             }
-
+            
         });
+        
+        if (self.isAudioPlaying)
+        {
+            [newPlayer stop];
+            self.isAudioPlaying = NO;
+        }
     }
 }
+
+NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+-(NSString *) randomStringWithLength: (int) len {
+    
+    NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
+    
+    for (int i=0; i<len; i++) {
+        [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform([letters length])]];
+    }
+    
+    return randomString;
+}
+
 
 @end

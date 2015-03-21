@@ -23,6 +23,10 @@
 		7ECD60F21ABD031700F0637D /* SpaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD60F11ABD031700F0637D /* SpaceViewController.m */; };
 		7ECD61011ABD031700F0637D /* ReportIncidentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD61001ABD031700F0637D /* ReportIncidentViewController.m */; };
 		EC520D1AA597BA1625C9C87E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3928C1753C454FFB91CAAEA4 /* libPods.a */; };
+		EC81EA941ABD171100ACF6DB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC81EA931ABD171100ACF6DB /* FacebookSDK.framework */; };
+		EC81EA961ABD1A8B00ACF6DB /* change pin.png in Resources */ = {isa = PBXBuildFile; fileRef = EC81EA951ABD1A8B00ACF6DB /* change pin.png */; };
+		EC81EA9F1ABD3C8200ACF6DB /* EmergencyContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC81EA9E1ABD3C8200ACF6DB /* EmergencyContactViewController.m */; };
+		EC81EAA21ABD41DB00ACF6DB /* PinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC81EAA11ABD41DB00ACF6DB /* PinViewController.m */; };
 		EC91DDA51ABCABE700FC7A49 /* siren.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC91DDA41ABCABE700FC7A49 /* siren.mp3 */; };
 		EC91DDAB1ABCAC5800FC7A49 /* AnimationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EC91DDAA1ABCAC5800FC7A49 /* AnimationUtils.m */; };
 		EC91DDAD1ABCAD2E00FC7A49 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC91DDAC1ABCAD2E00FC7A49 /* CoreLocation.framework */; };
@@ -117,6 +121,12 @@
 		7ECD60FF1ABD031700F0637D /* ReportIncidentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportIncidentViewController.h; path = Controller/ReportIncidentViewController.h; sourceTree = "<group>"; };
 		7ECD61001ABD031700F0637D /* ReportIncidentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportIncidentViewController.m; path = Controller/ReportIncidentViewController.m; sourceTree = "<group>"; };
 		9C8E22381E845C31380D3973 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		EC81EA931ABD171100ACF6DB /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		EC81EA951ABD1A8B00ACF6DB /* change pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "change pin.png"; sourceTree = "<group>"; };
+		EC81EA9D1ABD3C8200ACF6DB /* EmergencyContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmergencyContactViewController.h; path = Controller/EmergencyContactViewController.h; sourceTree = "<group>"; };
+		EC81EA9E1ABD3C8200ACF6DB /* EmergencyContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmergencyContactViewController.m; path = Controller/EmergencyContactViewController.m; sourceTree = "<group>"; };
+		EC81EAA01ABD41DB00ACF6DB /* PinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinViewController.h; path = Controller/PinViewController.h; sourceTree = "<group>"; };
+		EC81EAA11ABD41DB00ACF6DB /* PinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PinViewController.m; path = Controller/PinViewController.m; sourceTree = "<group>"; };
 		EC91DDA41ABCABE700FC7A49 /* siren.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = siren.mp3; sourceTree = "<group>"; };
 		EC91DDA71ABCAC1B00FC7A49 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		EC91DDA91ABCAC5800FC7A49 /* AnimationUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationUtils.h; sourceTree = "<group>"; };
@@ -181,6 +191,7 @@
 			files = (
 				EC91DDAD1ABCAD2E00FC7A49 /* CoreLocation.framework in Frameworks */,
 				EC520D1AA597BA1625C9C87E /* libPods.a in Frameworks */,
+				EC81EA941ABD171100ACF6DB /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +306,7 @@
 		7ECD60CD1ABD031000F0637D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				EC81EA951ABD1A8B00ACF6DB /* change pin.png */,
 				EC91DE051ABCDC2800FC7A49 /* user notactive btn.png */,
 				EC91DE031ABCAFDB00FC7A49 /* drawerbarbg.png */,
 				EC91DE011ABCAF9F00FC7A49 /* home.png */,
@@ -366,6 +378,10 @@
 				7EB7C8AF1ABBFF2C00E9BC48 /* DangerZoneViewController.m */,
 				7E1C1E411ABC3FF0007800D5 /* StoryDetailViewController.h */,
 				7E1C1E421ABC3FF0007800D5 /* StoryDetailViewController.m */,
+				EC81EA9D1ABD3C8200ACF6DB /* EmergencyContactViewController.h */,
+				EC81EA9E1ABD3C8200ACF6DB /* EmergencyContactViewController.m */,
+				EC81EAA01ABD41DB00ACF6DB /* PinViewController.h */,
+				EC81EAA11ABD41DB00ACF6DB /* PinViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -373,6 +389,7 @@
 		DD8821D7096ECB3901A872B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC81EA931ABD171100ACF6DB /* FacebookSDK.framework */,
 				EC91DDAC1ABCAD2E00FC7A49 /* CoreLocation.framework */,
 				3928C1753C454FFB91CAAEA4 /* libPods.a */,
 			);
@@ -515,6 +532,7 @@
 				EC91DDDA1ABCAF3800FC7A49 /* checkbutton.png in Resources */,
 				EC91DDF11ABCAF3800FC7A49 /* navicon.png in Resources */,
 				EC91DDE91ABCAF3800FC7A49 /* identifyspacepressed.png in Resources */,
+				EC81EA961ABD1A8B00ACF6DB /* change pin.png in Resources */,
 				EC91DDF81ABCAF3800FC7A49 /* spacebutton.png in Resources */,
 				EC91DDE31ABCAF3800FC7A49 /* header.png in Resources */,
 				EC91DDF31ABCAF3800FC7A49 /* reportbutton.png in Resources */,
@@ -608,6 +626,8 @@
 				7E1C1E431ABC3FF0007800D5 /* StoryDetailViewController.m in Sources */,
 				7ECD60CA1ABD026200F0637D /* SidePanelViewController.m in Sources */,
 				EC91DE091ABCDCC600FC7A49 /* RAContactsViewController.m in Sources */,
+				EC81EA9F1ABD3C8200ACF6DB /* EmergencyContactViewController.m in Sources */,
+				EC81EAA21ABD41DB00ACF6DB /* PinViewController.m in Sources */,
 				7ECD60DF1ABD031700F0637D /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -731,11 +751,17 @@
 			baseConfigurationReference = 478490AADEE3172A7728B900 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = "Take Care/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -744,11 +770,17 @@
 			baseConfigurationReference = 9C8E22381E845C31380D3973 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = "Take Care/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

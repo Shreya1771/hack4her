@@ -11,6 +11,7 @@
 #import <UIViewController+JASidePanel.h>
 #import "AFNetworking.h"
 #import "SpaceViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface HomeViewController ()
 @property (strong, nonatomic) NSMutableArray *array_stories;
@@ -34,7 +35,11 @@
     
     UIBarButtonItem *menu = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"drawerburger.png"] style:UIBarButtonItemStylePlain target:self action:@selector(toggleLeftPanel)];
     self.navigationItem.leftBarButtonItem = menu;
-    self.navigationItem.leftBarButtonItem.tintColor = [UIColor clearColor];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+    
+    FBLoginView *loginView = [[FBLoginView alloc] init];
+    loginView.frame = CGRectMake(23, 462, 274, 43);
+    [self.view addSubview:loginView];
 }
 
 - (void)toggleLeftPanel
@@ -80,6 +85,8 @@
         [self performSegueWithIdentifier:@"segueToSpace" sender:self];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error.localizedDescription);
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Okay", nil];
+        [alert show];
         [self hideHUD];
     }];
 }
